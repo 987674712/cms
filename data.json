@@ -1,0 +1,27 @@
+{
+  "code": 1000,
+  "data": {
+    "pageNumber": 1,
+    "pageSize": 20,
+    "total": 2,
+    "pages": 1,
+    "startIndex": 0,
+    "nextPage": 2,
+    "prePage": 1,
+    "list": [
+      {
+        "id": 13,
+        "name": "Admin",
+        "status": 1,
+        "nameDesc": "管理员"
+      },
+      {
+        "id": 14,
+        "name": "User",
+        "status": 1,
+        "nameDesc": "用户"
+      }
+    ]
+  },
+  "msg": "获取数据成功"
+}
