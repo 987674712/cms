@@ -1,0 +1,9 @@
+<script>
+//    sessionStorage.setItem('refreshTime',new Date().getTime())
+    console.log(new Date().getTime() - sessionStorage.getItem('refreshTime'))
+    if(new Date().getTime() < sessionStorage.getItem('refreshTime')){
+        alert('现在的时间比刚才的大')
+    }else{
+        alert('Time min')
+    }
+</script>

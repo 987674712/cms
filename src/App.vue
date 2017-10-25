@@ -1,77 +1,67 @@
 <template>
-  <div id="app">
-    <header>
-      <img src="./assets/nav.png" style="width: 100%;height: 100px" alt="">
-    </header>
-    <div class="content">
-      <div class="tab left">
-        <el-row class="tac">
-          <el-col :span="8">
-            <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose">
-              <el-submenu index="1">
-                <template slot="title"><i class="el-icon-menu"></i>管理</template>
-                <el-menu-item-group>
-                  <router-link to="/user">
-                    <el-menu-item index="1-1">
-                      角色管理
-                    </el-menu-item>
-                  </router-link>
-                  <router-link to="/footer">
-                    <el-menu-item index="1-2">
-                      用户管理
-                    </el-menu-item>
-                  </router-link>
-                  <router-link to="/body">
-                    <el-menu-item index="1-3">
-                      资源管理
-                    </el-menu-item>
-                  </router-link>
-                </el-menu-item-group>
-              </el-submenu>
-              <!--<el-menu-item index="2"><i class="el-icon-menu"></i>导航二</el-menu-item>-->
-              <!--<el-menu-item index="3"><i class="el-icon-setting"></i>导航三</el-menu-item>-->
-            </el-menu>
-          </el-col>
-        </el-row>
-      </div>
-      <div class="right">
-        <router-view></router-view>
-      </div>
-    </div>
-  </div>
+	<div id="app">
+		<transition name="fade"
+		            mode="out-in">
+			<router-view></router-view>
+		</transition>
+	</div>
 </template>
 
 <script>
-  export default{
-    methods: {
-      handleOpen (key, keyPath) {
-        console.log(key, keyPath)
-      },
-      handleClose (key, keyPath) {
-        console.log(key, keyPath)
-      }
-    }
-  }
+export default {
+	name: 'app',
+	components: {
+	}
+}
+
 </script>
 
-<style>
-  header {
-    height: 100px
-  }
+<style lang="scss">
+body {
+	margin: 0px;
+	padding: 0px;
+	/*background: url(assets/bg1.jpg) center !important;
+		background-size: cover;*/
+	// background: #1F2D3D;
+	font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, SimSun, sans-serif;
+	font-size: 14px;
+	-webkit-font-smoothing: antialiased;
+}
 
-  .tab {
-    width: 200px;
-    float: left
-  }
+#app {
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	width: 100%;
+}
 
-  .el-col-8 {
-    width: 100%!important;
-  }
+.el-submenu [class^=fa] {
+	vertical-align: baseline;
+	margin-right: 10px;
+}
 
-  .content {
-    width: 1360px;
-    margin: auto;
-    overflow: hidden;
-  }
-  .right{float: left}
+.el-menu-item [class^=fa] {
+	vertical-align: baseline;
+	margin-right: 10px;
+}
+
+.toolbar {
+	background: #f2f2f2;
+	padding: 10px;
+	//border:1px solid #dfe6ec;
+	margin: 10px 0px;
+	.el-form-item {
+		margin-bottom: 10px;
+	}
+}
+
+.fade-enter-active,
+.fade-leave-active {
+	transition: all .2s ease;
+}
+
+.fade-enter,
+.fade-leave-active {
+	opacity: 0;
+}
 </style>
